@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <div> 
+        <form action="/home/add" method="post">
+            <label>Enter first number: </label>
+            <input type="number" name="n1" />
+            <br />
+
+            <label>Enter second number: </label>
+            <input type="number" name="n2" />
+            <br />
+
+            <input type="submit" value="Add" />
+        </form>
+    </div>
+
+    <div>
+        Sum:@Model
+    </div>
+</body>
+</html>
