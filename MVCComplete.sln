@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02DataFromControllerToView1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03DataFromViewToController", "03DataFromViewToController\03DataFromViewToController.csproj", "{1505B2B4-DEC6-4460-BBDF-ED3285424131}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04DataFromControllerToController", "04DataFromControllerToController\04DataFromControllerToController.csproj", "{9A7E3042-C155-42B7-95A7-7E061757E2CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1505B2B4-DEC6-4460-BBDF-ED3285424131}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1505B2B4-DEC6-4460-BBDF-ED3285424131}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1505B2B4-DEC6-4460-BBDF-ED3285424131}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A7E3042-C155-42B7-95A7-7E061757E2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A7E3042-C155-42B7-95A7-7E061757E2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A7E3042-C155-42B7-95A7-7E061757E2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A7E3042-C155-42B7-95A7-7E061757E2CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

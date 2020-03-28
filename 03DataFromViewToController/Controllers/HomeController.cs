@@ -32,7 +32,7 @@ namespace _03DataFromViewToController.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(int n1, int n2)
+        public ActionResult Add(int n1, int n2, string hiddenValue)
         {
             int sum = n1 + n2;
             return View(sum);
