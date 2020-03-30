@@ -13,5 +13,11 @@ namespace _04DataFromControllerToController.Controllers
         {
             return View();
         }
+
+        public ActionResult Test()
+        {
+            Object obj = TempData["Data"];
+            return View(obj);
+        }
     }
 }

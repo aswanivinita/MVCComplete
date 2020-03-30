@@ -37,5 +37,13 @@ namespace _04DataFromControllerToController.Controllers
         {
             return View();
         }
+
+        public ActionResult CallTestEmployee()
+        {
+            var employee = new { Id = 123, Name = "Ram", Department = "HR" };
+            TempData["Data"] = employee;
+            return RedirectToAction("Test", "Employee");
+        }
+
     }
 }
