@@ -1,0 +1,56 @@
+﻿@model _07StronglyTypedHtmlHelperMethods.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(student => student.Id, new { Id = 100 })
+
+    @Html.LabelFor(student => student.Name)
+    @Html.TextBoxFor(student => student.Name)
+    <br />
+
+    @Html.LabelFor(student => student.Branch)
+    @Html.DropDownListFor(student => student.Branch, new List<SelectListItem> {
+    new SelectListItem { Text = "Computers", Value = "CS" },
+    new SelectListItem { Text = "Mechanical", Value = "ME" },
+    new SelectListItem { Text = "Literature", Value = "LI" },
+    new SelectListItem { Text = "Civil", Value = "CV" }
+
+    })
+    <br />
+
+    @Html.LabelFor(student => student.Description)
+    @Html.TextAreaFor(student => student.Description)
+    <br />
+
+    @Html.LabelFor(student => student.NeedHostel)
+    @Html.CheckBoxFor(student => student.NeedHostel)
+    <br />
+
+    @Html.LabelFor(student => student.Gender)
+
+    @Html.RadioButtonFor(student => student.Gender, "Male")
+    @Html.RadioButtonFor(student => student.Gender, "Female")
+    <br />
+
+    @Html.LabelFor(student => student.Email)
+    @Html.TextBoxFor(student => student.Email)
+
+   <br />
+
+    @Html.LabelFor(student => student.Password)
+    @Html.PasswordFor(student => student.Password)
+   
+    <br />
+
+    <input type="submit"  value="Create" />
+
+
+
+}
+

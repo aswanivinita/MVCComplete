@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+
+    @Html.Label("Enter your name")
+    @Html.TextBox("name")
+    <br />
+
+    @Html.Label("Marital Status")
+
+    <span> Yes:</span>@Html.RadioButton("married", "Yes")
+    <span> No:</span> @Html.RadioButton("married", "No")
+    <br />
+
+    @Html.Label("Skill Sets")
+    <span> Html:</span>@Html.CheckBox("html", true)
+    <span> CSS:</span>@Html.CheckBox("cSS")
+    <span> JavaSCript:</span>@Html.CheckBox("javaScript")
+    <span> C#:</span>@Html.CheckBox("cSharp")
+    <br />
+
+    @Html.Label("Branch")
+    @Html.DropDownList("branch", new List<SelectListItem>
+    {
+        new SelectListItem { Text="Computer Science", Value = "CS" },
+        new SelectListItem { Text="Electronics", Value = "ES" },
+        new SelectListItem { Text="Mechanical", Value = "ME" },
+        new SelectListItem { Text="Civil", Value = "CV" },
+    })
+
+    <br />
+
+    @Html.Label("Tell about yourself")
+    @Html.TextArea("description")
+    <br />
+
+    @Html.Label("Enter your email address")
+    @Html.TextBox("email",null, htmlAttributes: new {placeholder = "email", @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Enter your password")
+    @Html.Password("password")
+
+    @Html.Hidden("secretKey", "My Key")
+
+   <br />
+
+   <input type="submit" value="Create" />
+
+}
