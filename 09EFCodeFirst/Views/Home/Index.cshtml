@@ -1,0 +1,44 @@
+﻿@model List<_09EFCodeFirst.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Create" ,"Create", "Home")
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID </th>
+
+            <th>Name</th>
+
+            <th>Salary</th>
+
+            <th>Department</th>
+
+            <th>Actions</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach(var employee in Model)
+        {
+        <tr>
+            <td>@employee.Id </td>
+            <td>@employee.Name </td>
+            <td>@employee.Salary</td>
+            <td>@employee.Department</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Home", new { Id = employee.Id }, null) |
+                @Html.ActionLink("Details", "Details", "Home", new { Id = employee.Id }, null) |
+                @Html.ActionLink("Delete", "Delete", "Home", new { Id = employee.Id }, null) |
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

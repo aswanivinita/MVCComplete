@@ -1,0 +1,31 @@
+﻿@model _09EFCodeFirst.Models.Employee
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+
+    @Html.LabelFor(employee => employee.Name)
+    @Html.TextBoxFor(employee => employee.Name)
+    <br />
+
+
+    @Html.LabelFor(employee => employee.Department)
+    @Html.TextBoxFor(employee => employee.Department)
+    <br />
+
+
+    @Html.LabelFor(employee => employee.Salary)
+    @Html.TextBoxFor(employee => employee.Salary)
+    <br />
+
+    <input type="submit" value="Create" />
+
+
+
+}
