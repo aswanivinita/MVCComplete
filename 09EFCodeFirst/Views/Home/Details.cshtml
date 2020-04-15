@@ -1,0 +1,29 @@
+﻿@model _09EFCodeFirst.Models.Employee
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+@Html.LabelFor(employee => employee.Name)
+
+<p>@Model.Name </p>
+
+
+@Html.LabelFor(employee => employee.Salary)
+
+<p>@Model.Salary </p>
+
+
+@Html.LabelFor(employee => employee.Department)
+
+<p>@Model.Department </p>
+
+
+@Html.LabelFor(employee => employee.Id)
+
+<p>@Model.Id </p>
+
+@Html.ActionLink("Go to Home Page", "Index", "Home")
+
+

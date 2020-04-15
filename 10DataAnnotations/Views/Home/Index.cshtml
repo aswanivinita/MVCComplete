@@ -1,0 +1,47 @@
+﻿@model List<_10DataAnnotations.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+<table class="table table-bordered table-condensed table-hover table-striped table-responsive" >
+    <thead>
+        <tr>
+            <th>ID </th>
+
+            <th>Name</th>
+
+            <th>Email</th>
+
+            <th>Password</th>
+
+            <th>Total Marks</th>
+
+            <th>Actions</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id </td>
+                <td>@student.Name </td>
+                <td>@student.Email</td>
+                <td>@student.Password</td>
+                <td>@student.TotalMarks</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Home", new { Id = student.Id }, null) |
+                    @Html.ActionLink("Details", "Details", "Home", new { Id = student.Id }, null) |
+                    @Html.ActionLink("Delete", "Delete", "Home", new { Id = student.Id }, null) |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

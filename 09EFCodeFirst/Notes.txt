@@ -3,5 +3,9 @@ Step 2. Add connection string in the Web.config.
 Step 3. Add DbContext class in Models folder.
 Step 4. Add the Model class in Models Folder.
 Step 5. Inherit the EmployeeDbContext from DbContext.(Employee class is the example )
-Step 6. Add DbSet Property (DbSet is the table).
-Step 7. Add the Db object from the EmployeeDbContext in controller.
+Step 6. Add the Model (eg.Employee class in the Model folder )
+Step 7. Add DbSet Property (DbSet is the table).
+Step 8. Add the Db object from the EmployeeDbContext in controller.
+step 9. Install the "Microsoft.jQuery.Unobtrusive.Validation.3.2.11" nuget package.
+Step 10. Call the  Html.AntiForgeryToken() method for every http post.
+Step 11. Add the "@RenderSection("scripts",false)" in "_Layout.cshtml" file.

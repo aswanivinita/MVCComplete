@@ -1,6 +1,7 @@
 ﻿using _09EFCodeFirst.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -34,11 +35,43 @@ namespace _09EFCodeFirst.Controllers
 
         public ActionResult Edit(int Id)
         {
+            Employee e = db.Employees.Find(Id);
 
-            return View();
+
+            return View(e);
         }
+
+        [HttpPost]
+        public ActionResult Edit(Employee employee)
+        {
+            db.Entry(employee).State = EntityState.Modified;
+            db.SaveChanges();
+
+
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult Details(int Id)
+        {
+            Employee e = db.Employees.Find(Id);
+
+
+            return View(e);
+        }
+
+        public ActionResult Delete(int Id)
+        {
+            Employee e = db.Employees.Find(Id);
+
+            db.Entry(e).State = EntityState.Deleted;
+            db.SaveChanges();
+
+
+            return RedirectToAction("Index");
+        }
+    }
 
 
 
     }
-}
