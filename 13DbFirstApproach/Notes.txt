@@ -1,0 +1,12 @@
+﻿DataBase First Approach
+Add Entity Framework. 
+Right click on the models folder, add new item.
+Select Data and select Ado.net Entity Model.
+Give the name DbContext name(eg. EmployeeDbContext).
+Select DbFirst Approach in the wizard.
+Select new Connection button.
+give the name .\sqlExpress in the server name.
+Select the data base from the dropdown.
+click on the test connection.
+click on ok, click on next. select the table click on finish.
+.cs files will be added in Models folder.

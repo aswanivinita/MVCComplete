@@ -33,11 +33,7 @@ namespace _04DataFromControllerToController.Controllers
             return View();
         }
 
-        public ActionResult Demo4()
-        {
-            return View();
-        }
-
+       
         public ActionResult CallTestEmployee()
         {
             var employee = new { Id = 123, Name = "Ram", Department = "HR" };

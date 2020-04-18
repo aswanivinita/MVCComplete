@@ -1,0 +1,32 @@
+﻿@model List<_13DbFirstApproach.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Location</td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+

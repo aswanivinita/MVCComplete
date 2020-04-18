@@ -1,0 +1,36 @@
+﻿@model List<_12DataMigration.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+
+    <thead>
+
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach(var student in Model)
+        {
+        <tr>
+            <td>@student.Id</td>
+            <td>@student.Name</td>
+            <td>@student.Gender</td>
+            <td>@student.Email</td>
+        </tr>
+        }
+
+    </tbody>
+
+</table>
+
+

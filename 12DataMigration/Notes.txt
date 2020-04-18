@@ -1,0 +1,17 @@
+﻿Data Migration Commands
+Enable-Migrations: It enables the migration(any change in the model class) for the project. It has to be executed only
+once. Creates a configuration.cs file
+
+Add-Migration: Creates a new migration class as per the name specified with Up() and Down() methods.
+Syntax: Add-Migration MigrationName  
+Example: Add-Migration MobileNumberAdded
+
+Creates a MobileNumberAdded.cs file
+
+Update-Database : Executed the last migration file created  by Add-Migration and applies changes to the database
+schema
+
+For all the above commands we can provide -verbose. This will give details about the command executing behind the
+scene.
+
+Tools-> NuGet PAckage Manager -> PAckage Manager Consol
