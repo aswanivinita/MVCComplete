@@ -1,4 +1,6 @@
-﻿@model List<_16PaginationsSearchingAndSorting.Models.Employee>
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<_16PaginationsSearchingAndSorting.Models.Employee>
 @{
     ViewBag.Title = "Index";
 }
@@ -6,17 +8,84 @@
 <h2>Index</h2>
 @Html.ActionLink("Create", "Create", "Home")
 
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    @Html.Hidden("page", ViewBag.Page as string )
+    @Html.Hidden("sortOrder", ViewBag.CurrentSortOrder as string)
+    <div class="form-group col-md-10">
 
-<table>
+        @Html.Label("Enter the Search Name", htmlAttributes: new { @class = "control-label col-md-3" })
+        @Html.TextBox("SearchString", null, htmlAttributes: new { @class = "form-control col-md-9" })
+
+    </div>
+
+    <div class="form-group col-md-2">
+
+        <input type="submit" value="Search" />
+
+    </div>
+}
+
+
+<table class=" table table-bordered table-condensed table-hover table-responsive table-striped">
     <thead>
         <tr>
             <th>ID </th>
 
-            <th>Name</th>
+            <th>
+                @Html.ActionLink("Name", "Index", "Home",
+               new { sortOrder = ViewBag.NameSort, searchString = ViewBag.SearchString, page = ViewBag.Page }, new { })
 
-            <th>Salary</th>
+                @if (ViewBag.CurrentSortOrder == "name_asc")
+                {
+                    <span class="glyphicon glyphicon-arrow-up"></span>
+                }
+                else if (ViewBag.CurrentSortOrder == "name_dsc")
+                {
+                    <span class="glyphicon glyphicon-arrow-down"></span>
+                }
+                else
+                {
+                    <span></span>
+                }
+            </th>
 
-            <th>Department</th>
+
+            <th>
+                @Html.ActionLink("Salary", "Index", "Home",
+              new { sortOrder = ViewBag.SalarySort, searchString = ViewBag.SearchString, page = ViewBag.Page }, new { })
+                @if (ViewBag.CurrentSortOrder == "salary_asc")
+
+                {
+                    <span class="glyphicon glyphicon-arrow-up"></span>
+                }
+                else if (ViewBag.CurrentSortOrder == "salary_dsc")
+                {
+                    <span class="glyphicon glyphicon-arrow-down"></span>
+                }
+                else
+                {
+                    <span></span>
+                }
+            </th>
+
+            <th>
+                @Html.ActionLink("Department", "Index", "Home",
+              new { sortOrder = ViewBag.DepartmentSort, searchString = ViewBag.SearchString, page = ViewBag.Page }, new { })
+
+                @if (ViewBag.CurrentSortOrder == "dept_asc")
+                {
+                    <span class="glyphicon glyphicon-arrow-up"></span>
+                }
+                else if (ViewBag.CurrentSortOrder == "dept_dsc")
+                {
+                    <span class="glyphicon glyphicon-arrow-down"></span>
+                }
+                else
+                {
+                    <span></span>
+                }
+            </th>
 
             <th>Actions</th>
         </tr>
@@ -41,4 +110,10 @@
         }
     </tbody>
 </table>
+
+<div>
+    page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, Page => Url.Action("Index", "Home",
+    new { Page, searchString = ViewBag.SearchString, sortOrder = ViewBag.CurrentSortOrder }))
+</div>
 

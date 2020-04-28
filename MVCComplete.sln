@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15ModelFirstApproach", "15M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16PaginationsSearchingAndSorting", "16PaginationsSearchingAndSorting\16PaginationsSearchingAndSorting.csproj", "{0D6FC22A-89D5-4AA8-B304-900E618AA41F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17BundlingAndMinification", "17BundlingAndMinification\17BundlingAndMinification.csproj", "{A371CBDE-7DF6-4AC5-AC14-9E0966095E52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{0D6FC22A-89D5-4AA8-B304-900E618AA41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D6FC22A-89D5-4AA8-B304-900E618AA41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D6FC22A-89D5-4AA8-B304-900E618AA41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A371CBDE-7DF6-4AC5-AC14-9E0966095E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A371CBDE-7DF6-4AC5-AC14-9E0966095E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A371CBDE-7DF6-4AC5-AC14-9E0966095E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A371CBDE-7DF6-4AC5-AC14-9E0966095E52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

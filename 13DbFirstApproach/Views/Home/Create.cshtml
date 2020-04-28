@@ -1,0 +1,23 @@
+﻿@model _13DbFirstApproach.Models.Employee
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create","Home", FormMethod.Post))
+{
+    @Html.LabelFor(employee =>employee.Name)
+    @Html.TextBoxFor(employee => employee.Name)
+    <br/>
+
+    @Html.LabelFor(employee=>employee.Email)
+    @Html.TextBoxFor(employee=>employee.Email)
+    <br/>
+
+    @Html.LabelFor(employee=>employee.Location)
+    @Html.TextBoxFor(employee=>employee.Location)
+    <br/>
+
+    <input type="submit" value="Creat" />
+}
