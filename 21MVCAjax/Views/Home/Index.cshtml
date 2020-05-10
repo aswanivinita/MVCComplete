@@ -1,0 +1,76 @@
+﻿@model _21MVCAjax.Models.Employee
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Ajax.ActionLink("Get Date Time", "GetDateTime", "Home", new AjaxOptions
+{
+
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "result",
+    OnBegin = "onBegin",
+    OnComplete = "onComplete",
+    OnSuccess = "onSuccess",
+    OnFailure = "onFailure",
+    LoadingElementId = "loader"
+})
+
+@using (Ajax.BeginForm("Create", "Home", new AjaxOptions
+{
+
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "result",
+    OnBegin = "onBegin",
+    OnComplete = "onComplete",
+    OnSuccess = "onSuccess",
+    OnFailure = "onFailure",
+    LoadingElementId = "loader",
+    HttpMethod = "POST"
+}))
+{
+    <div>
+        @Html.LabelFor(emp => emp.Name)
+        @Html.TextBoxFor(emp => emp.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(emp => emp.Salary)
+        @Html.TextBoxFor(emp => emp.Salary)
+    </div>
+
+
+    <input type="submit" value="create" />
+}
+
+
+<div id="result">
+
+</div>
+
+<div id="loader" style="display:none">
+    <img src="~/ajax-loader.gif" />
+</div>
+
+@section scripts{
+
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        function onBegin() {
+            //alert("Ajax Begin");
+        }
+
+        function onComplete() {
+            //alert("Ajax Completed");
+        }
+
+        function onSuccess() {
+            // alert("Ajax Success");
+        }
+
+        function onFailure() {
+            //alert("Ajax Failed");
+        }
+
+    </script>
+}

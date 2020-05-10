@@ -20,18 +20,7 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-right">
-                    @if (!User.Identity.IsAuthenticated)
-                    {
-                        <li class="nav navbar-header">@Html.ActionLink("Login", "Login", "Accounts")</li>
-                        <li class="nav navbar-nav">@Html.ActionLink("Register", "Register", "Accounts")</li>
-                    }
-
-                    else
-                    {
-                        <li class="nav navbar-nav"><span>Hi @User.Identity.Name</span></li>
-                        <li class="nav navbar-nav">@Html.ActionLink("LogOut", "LogOut", "Accounts")</li>
-                    }
+                <ul class="nav navbar-nav">
                 </ul>
             </div>
         </div>
@@ -47,5 +36,6 @@
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", false)
 </body>
 </html>
